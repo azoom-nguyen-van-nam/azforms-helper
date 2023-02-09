@@ -1,0 +1,61 @@
+{
+    "initialStepId": "start",
+    "isContactShown": false,
+    "name": "駐車場の管理規則確認フォーム",
+    "steps": [
+      {
+        "stepId": "start",
+        "title": "【重要】月極駐車場管理規則のご確認をお願いいたします",
+        "options": {
+          "editUrl": true
+        },
+        "isDisplayErrorMessage": false,
+        "isOnlyShowErrorIcon": true,
+        "postProcess": {
+          "defaultDestination": "end",
+          "label": "送信する"
+        },
+        "parts": [
+          {
+            "partId": "contract-info",
+            "type": "markdown-text",
+            "options": {
+              "content": "<div class='border rounded-1 pl-5'><h4 class='my-2'>契約内容</h4><p class='my-2'>駐車場名　： {{ parkingName }}</p><p class='my-2'>車室名　　： {{ carRoomName }}</p><p class='my-2'>契約開始日： {{ contractStartDate }}</p></div>"
+            }
+          },
+          {
+            "partId": "note",
+            "type": "markdown-text",
+            "options": {
+              "content": "<div class='rounded-1 pl-5 py-2'><p>月極駐車場管理規則を下記リンクより開き、内容を必ずご確認ください。</p><p>内容についてご理解いただけましたら下のチェックボックスにチェックをしていただき送信してください。</p></div>"
+            }
+          },
+          {
+            "partId": "parking-policy",
+            "type": "teppeki-contract",
+            "options": {
+              "link": "管理規則を開く",
+              "url": "/",
+              "checkboxLabel": "私は管理規則の内容を了承し同意いたします。",
+              "alert": "※チェックボックスは上記「管理規則を開く」をクリックして内容をご確認いただくまでチェックできません。",
+              "hasSubWebhook": true
+            }
+          }
+        ]
+      },
+      {
+        "stepId": "end",
+        "parts": [
+          {
+            "options": {
+              "content": "<div class='pl-5'> <p>ご確認いただきありがとうございました。</p><p>ご確認いただいた管理規則をご登録のメールアドレス宛てにお送りしておりますので、そちらもご確認ください。</p><br/><p>引き続きどうぞよろしくお願いいたします。</p></div>"
+            },
+            "type": "markdown-text",
+            "partId": "final"
+          }
+        ],
+        "isCompletedStep": true,
+        "title": "【重要】月極駐車場管理規則のご確認をお願いいたします"
+      }
+    ]
+}

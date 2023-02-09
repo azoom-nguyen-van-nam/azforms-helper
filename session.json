@@ -1,0 +1,16 @@
+{
+    "data": {
+        "parkingName": "○○○パーキング",
+        "carRoomName": "○○○パーキング",
+        "contractStartDate": "2015-12-12",
+        "checkboxLabel": "私は管理規則の内容を了承し同意いたします。",
+        "subWebhook": {
+            "apiUrl": "http://95.111.195.217:5000/test",
+            "requestBody": {
+                "id": 1
+            }
+        }
+    },
+    "email": "nguyen.van.nam@azoom.jp",
+    "results": []
+}
